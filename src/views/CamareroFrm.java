@@ -23,6 +23,7 @@ public class CamareroFrm extends javax.swing.JFrame implements  Observer{
      * Creates new form Camarero
      */
     private Menu m = new Menu();
+    public static boolean s = false;
     public static ArrayList<Producto> productos = new ArrayList<Producto>();
     public CamareroFrm() {
         initComponents();
@@ -103,6 +104,7 @@ public class CamareroFrm extends javax.swing.JFrame implements  Observer{
     private void btnTerminarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTerminarPedidoActionPerformed
         Cliente c =  new Cliente("192.168.100.4",5000, txtNota.getText());
         Thread t =  new Thread(c);
+        s = true;
         t.start();
     }//GEN-LAST:event_btnTerminarPedidoActionPerformed
 

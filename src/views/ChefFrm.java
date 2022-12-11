@@ -5,7 +5,9 @@
  */
 package views;
 
+import MiniChatMulPC.Server;
 import Utilerias.FondoImagen;
+import java.util.Observable;
 
 /**
  *
@@ -18,6 +20,11 @@ public class ChefFrm extends javax.swing.JFrame {
      */
     public ChefFrm() {
         initComponents();
+        //this.getRootPane().setDefaultButton(this.btnTerminarPedido);
+        Server s = new Server(5000);
+        //s.addObserver(this);
+        Thread t = new Thread(s);
+        t.start();
     }
 
     /**
@@ -31,7 +38,7 @@ public class ChefFrm extends javax.swing.JFrame {
 
         jPanel1 = new FondoImagen("chef.jpg");
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtOrden = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,9 +55,9 @@ public class ChefFrm extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtOrden.setColumns(20);
+        txtOrden.setRows(5);
+        jScrollPane1.setViewportView(txtOrden);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,6 +119,9 @@ public class ChefFrm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea txtOrden;
     // End of variables declaration//GEN-END:variables
+    /*public void update(Observable o, Object arg) {
+        this.txtOrden.append((String) arg);
+    }*/
 }
