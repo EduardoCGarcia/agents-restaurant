@@ -5,33 +5,19 @@
  */
 package views;
 
-import MiniChatMulPC.Cliente;
-import MiniChatMulPC.Server;
 import Utilerias.FondoImagen;
-import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
-import models.Producto;
 
 /**
  *
  * @author eduar
  */
-public class CamareroFrm extends javax.swing.JFrame implements  Observer{
+public class ChefFrm extends javax.swing.JFrame {
 
     /**
-     * Creates new form Camarero
+     * Creates new form ChefFrm
      */
-    private Menu m = new Menu();
-    public static ArrayList<Producto> productos = new ArrayList<Producto>();
-    public CamareroFrm() {
+    public ChefFrm() {
         initComponents();
-        m.setVisible(true);
-        this.getRootPane().setDefaultButton(this.btnTerminarPedido);
-        Server s = new Server(5000);
-        s.addObserver(this);
-        Thread t = new Thread(s);
-        t.start();
     }
 
     /**
@@ -43,14 +29,13 @@ public class CamareroFrm extends javax.swing.JFrame implements  Observer{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new FondoImagen("camarero.jpg");
+        jPanel1 = new FondoImagen("chef.jpg");
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtNota = new javax.swing.JTextArea();
-        btnTerminarPedido = new javax.swing.JButton();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -60,19 +45,12 @@ public class CamareroFrm extends javax.swing.JFrame implements  Observer{
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        txtNota.setColumns(20);
-        txtNota.setRows(5);
-        jScrollPane1.setViewportView(txtNota);
-
-        btnTerminarPedido.setText("Terminar Pedido");
-        btnTerminarPedido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTerminarPedidoActionPerformed(evt);
-            }
-        });
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,9 +59,7 @@ public class CamareroFrm extends javax.swing.JFrame implements  Observer{
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(btnTerminarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -91,20 +67,12 @@ public class CamareroFrm extends javax.swing.JFrame implements  Observer{
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnTerminarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnTerminarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTerminarPedidoActionPerformed
-        Cliente c =  new Cliente("192.168.100.4",5000, txtNota.getText());
-        Thread t =  new Thread(c);
-        t.start();
-    }//GEN-LAST:event_btnTerminarPedidoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,33 +91,27 @@ public class CamareroFrm extends javax.swing.JFrame implements  Observer{
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CamareroFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChefFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CamareroFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChefFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CamareroFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChefFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CamareroFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChefFrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CamareroFrm().setVisible(true);
+                new ChefFrm().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnTerminarPedido;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JTextArea txtNota;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
-    @Override
-    public void update(Observable o, Object arg) {
-        this.txtNota.append((String) arg);
-    }
 }

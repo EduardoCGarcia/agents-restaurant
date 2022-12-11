@@ -346,42 +346,42 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnH1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnH1ActionPerformed
-        Camarero.productos.add(new Producto("Hamburgesa 1", 50));
+        CamareroFrm.productos.add(new Producto("Hamburgesa 1", 50));
         actualizarCuenta();
     }//GEN-LAST:event_btnH1ActionPerformed
 
     private void btnH2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnH2ActionPerformed
-        Camarero.productos.add(new Producto("Hamburgesa 2", 60));
+        CamareroFrm.productos.add(new Producto("Hamburgesa 2", 60));
         actualizarCuenta();
     }//GEN-LAST:event_btnH2ActionPerformed
 
     private void btnH3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnH3ActionPerformed
-        Camarero.productos.add(new Producto("Hamburgesa 3", 70));
+        CamareroFrm.productos.add(new Producto("Hamburgesa 3", 70));
         actualizarCuenta();
     }//GEN-LAST:event_btnH3ActionPerformed
 
     private void btnP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnP1ActionPerformed
-        Camarero.productos.add(new Producto("Pizza 1", 50));
+        CamareroFrm.productos.add(new Producto("Pizza 1", 50));
         actualizarCuenta();
     }//GEN-LAST:event_btnP1ActionPerformed
 
     private void btnP2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnP2ActionPerformed
-        Camarero.productos.add(new Producto("Pizza 2", 60));
+        CamareroFrm.productos.add(new Producto("Pizza 2", 60));
         actualizarCuenta();
     }//GEN-LAST:event_btnP2ActionPerformed
 
     private void btnP3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnP3ActionPerformed
-        Camarero.productos.add(new Producto("Pizza 3", 70));
+        CamareroFrm.productos.add(new Producto("Pizza 3", 70));
         actualizarCuenta();
     }//GEN-LAST:event_btnP3ActionPerformed
 
     private void btnB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnB1ActionPerformed
-        Camarero.productos.add(new Producto("Malteada 1", 60));
+        CamareroFrm.productos.add(new Producto("Malteada 1", 60));
         actualizarCuenta();
     }//GEN-LAST:event_btnB1ActionPerformed
 
     private void btnB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnB2ActionPerformed
-        Camarero.productos.add(new Producto("Malteada 1", 60));
+        CamareroFrm.productos.add(new Producto("Malteada 1", 60));
         actualizarCuenta();
     }//GEN-LAST:event_btnB2ActionPerformed
 
@@ -456,12 +456,12 @@ public class Menu extends javax.swing.JFrame {
         String c = "";
         int num = 1;
         int total = 0;
-        for (Producto p : Camarero.productos) {
+        for (Producto p : CamareroFrm.productos) {
             c += String.format("%d.- %s $%d\n", num++,p.getNombre(),p.getPrecio());
             total += p.getPrecio();
         }
         c += String.format("-------------------------------\nTotal: $%d", total);
-        Camarero.txtNota.setText(c);
+        CamareroFrm.txtNota.setText(c);
     }
     
     

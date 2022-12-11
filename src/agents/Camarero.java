@@ -3,6 +3,7 @@ package agents;
 import MiniChatMulPC.*;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
+import views.CamareroFrm;
 
 /**
  *
@@ -12,7 +13,7 @@ public class Camarero extends Agent {
     //Los comportamientos se ejecutan en el orden que se crearon
     protected void setup() {
         //Aqui es donde se añade el comportamiento.
-        Frm1 m = new Frm1();
+        CamareroFrm m = new CamareroFrm();
         m.setVisible(true);
     }
     
