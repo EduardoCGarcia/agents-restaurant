@@ -42,7 +42,10 @@ public class Chef extends Agent {
                             mensaje.addReceiver(new AID(("SousChef"), AID.ISLOCALNAME));
                             mensaje.setContent(prod);
                             send(mensaje);
-                            ChefFrm.txtOrden.append("SousChef Prepara lo siguiente: " + prod);
+                            ACLMessage mensajeRespuesta =  blockingReceive();
+                            ChefFrm.txtOrden.append("SousChef Prepara los ingredientes para lo siguiente: " + prod);
+                            ChefFrm.txtOrden.append("Mushcas Gracias SousChef por darme los ingredientes: " + mensajeRespuesta.getContent());
+                            
                         }
                         case "Hamburgesa 2" -> {
                             System.out.println("Se enconttro Hamburgesa 2");

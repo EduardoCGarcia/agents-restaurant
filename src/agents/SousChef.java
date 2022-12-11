@@ -27,11 +27,15 @@ public class SousChef extends Agent {
 
         public void action() {
             ACLMessage mensajeRecibido = blockingReceive();
+            ACLMessage respuesta;
             String msj = mensajeRecibido.getContent();
             if (msj != null) {
                 switch (msj) {
                     case "Hamburgesa 1" -> {
                         SousChefFrm.txtSolicitud.append(msj);
+                        respuesta = mensajeRecibido.createReply();
+                        respuesta.setContent("Pan|Carne");
+                        send(respuesta);
                     }
                     case "Hamburgesa 2" -> {
 
