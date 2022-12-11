@@ -167,25 +167,39 @@ public class CamareroFrm extends javax.swing.JFrame implements Observer {
                 n.setVisible(true);
             }
             case "Hamburgesa 2" -> {
-                System.out.println("Se enconttro Hamburgesa 2");
+                Entrega n = new Entrega(this, true);
+                GUITools.panelIntoPanel(n.pnlImg, new FondoImagen("h2.jpg"));
+                n.setVisible(true);
             }
             case "Hamburgesa 3" -> {
-                System.out.println("Se enconttro Hamburgesa 3");
+                Entrega n = new Entrega(this, true);
+                GUITools.panelIntoPanel(n.pnlImg, new FondoImagen("h3.jpg"));
+                n.setVisible(true);
             }
             case "Pizza 1" -> {
-                System.out.println("Se enconttro Pizza 1");
+                Entrega n = new Entrega(this, true);
+                GUITools.panelIntoPanel(n.pnlImg, new FondoImagen("p1.jpg"));
+                n.setVisible(true);
             }
             case "Pizza 2" -> {
-                System.out.println("Se enconttro Pizza 2");
+                Entrega n = new Entrega(this, true);
+                GUITools.panelIntoPanel(n.pnlImg, new FondoImagen("p2.jpg"));
+                n.setVisible(true);
             }
             case "Pizza 3" -> {
-                System.out.println("Se enconttro Pizza 3");
+                Entrega n = new Entrega(this, true);
+                GUITools.panelIntoPanel(n.pnlImg, new FondoImagen("p3.jpg"));
+                n.setVisible(true);
             }
             case "Malteada 1" -> {
-                System.out.println("Se enconttro Malteada 1");
+                Entrega n = new Entrega(this, true);
+                GUITools.panelIntoPanel(n.pnlImg, new FondoImagen("b1.jpg"));
+                n.setVisible(true);
             }
             case "Malteada 2" -> {
-                System.out.println("Se enconttro Malteada 2");
+                Entrega n = new Entrega(this, true);
+                GUITools.panelIntoPanel(n.pnlImg, new FondoImagen("b2.jpg"));
+                n.setVisible(true);
             }
         }
     }

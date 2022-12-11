@@ -46,25 +46,25 @@ public class Chef extends Agent {
                             actionProd(prod,"h1.jpeg");
                         }
                         case "Hamburgesa 2" -> {
-                            System.out.println("Se enconttro Hamburgesa 2");
+                            actionProd(prod,"h2.jpg");
                         }
                         case "Hamburgesa 3" -> {
-                            System.out.println("Se enconttro Hamburgesa 3");
+                            actionProd(prod,"h3.jpg");
                         }
                         case "Pizza 1" -> {
-                            System.out.println("Se enconttro Pizza 1");
+                            actionProd(prod,"p1.jpg");
                         }
                         case "Pizza 2" -> {
-                            System.out.println("Se enconttro Pizza 2");
+                            actionProd(prod,"p2.jpg");
                         }
                         case "Pizza 3" -> {
-                            System.out.println("Se enconttro Pizza 3");
+                            actionProd(prod,"p3.jpg");
                         }
                         case "Malteada 1" -> {
-                            System.out.println("Se enconttro Malteada 1");
+                            actionProd(prod,"b1.jpg");
                         }
                         case "Malteada 2" -> {
-                            System.out.println("Se enconttro Malteada 2");
+                            actionProd(prod,"b2.jpg");
                         }
                     }
                 }
@@ -93,7 +93,7 @@ public class Chef extends Agent {
             ChefFrm.txtOrden.append("\n-------------------------------------------------------------\n");
 
             Entrega n = new Entrega(m, true);
-            GUITools.panelIntoPanel(n.pnlImg, new FondoImagen("h1.jpeg"));
+            GUITools.panelIntoPanel(n.pnlImg, new FondoImagen(img));
             n.setVisible(true);
             ChefFrm.sendMessage(prod);
         }
