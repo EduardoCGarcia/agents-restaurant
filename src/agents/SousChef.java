@@ -1,5 +1,6 @@
-package MiniChatMulPC;
+package agents;
 
+import MiniChatMulPC.*;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
 
@@ -7,7 +8,7 @@ import jade.core.behaviours.Behaviour;
  *
  * @author eduar
  */
-public class Agente extends Agent {
+public class SousChef extends Agent {
     //Los comportamientos se ejecutan en el orden que se crearon
     protected void setup() {
         //Aqui es donde se añade el comportamiento.
