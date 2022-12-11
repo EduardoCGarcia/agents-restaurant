@@ -1,7 +1,9 @@
 package agents;
 
+import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
+import jade.lang.acl.ACLMessage;
 import views.ChefFrm;
 
 /**
@@ -36,6 +38,10 @@ public class Chef extends Agent {
                 for (String prod : prods) {
                     switch (prod) {
                         case "Hamburgesa 1" -> {
+                            ACLMessage mensaje = new ACLMessage(ACLMessage.INFORM);
+                            mensaje.addReceiver(new AID(("SousChef1"), AID.ISLOCALNAME));
+                            mensaje.setContent(prod);
+                            send(mensaje);
                             System.out.println("Se enconttro Hamburgesa 1");
                         }
                         case "Hamburgesa 2" -> {
