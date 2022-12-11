@@ -9,6 +9,7 @@ import views.ChefFrm;
  * @author eduar
  */
 public class Chef extends Agent {
+
     //Los comportamientos se ejecutan en el orden que se crearon
     protected void setup() {
         //Aqui es donde se añade el comportamiento.
@@ -16,20 +17,50 @@ public class Chef extends Agent {
         m.setVisible(true);
         addBehaviour(new PedirIngredientesBehaiviour());
     }
-    
-    
+
     /**
      * Este es el comportamiento del agente Imprime dos mensajes uno con el
      * nombre e indica que es el primer comporttamiento, ademas de que crea un
      * nuevo comportamiento
      */
     private class PedirIngredientesBehaiviour extends Behaviour {
+
         private boolean finished = false;
+        private String pedido;
+
         public void action() {
             if (!ChefFrm.peticion.isEmpty()) {
                 finished = true;
-                ChefFrm.peticion += "\nPedido recibido";
-                ChefFrm.txtOrden.setText(ChefFrm.peticion);
+                pedido = ChefFrm.peticion;
+                String[] prods = pedido.split("\n");
+                for (String prod : prods) {
+                    switch (pedido) {
+                        case "Hamburgesa 1" -> {
+                            System.out.println("Se enconttro Hamburgesa 1");
+                        }
+                        case "Hamburgesa 2" -> {
+                            System.out.println("Se enconttro Hamburgesa 2");
+                        }
+                        case "Hamburgesa 3" -> {
+                            System.out.println("Se enconttro Hamburgesa 3");
+                        }
+                        case "Pizza 1" -> {
+                            System.out.println("Se enconttro Pizza 1");
+                        }
+                        case "Pizza 2" -> {
+                            System.out.println("Se enconttro Pizza 2");
+                        }
+                        case "Pizza 3" -> {
+                            System.out.println("Se enconttro Pizza 3");
+                        }
+                        case "Malteada 1" -> {
+                            System.out.println("Se enconttro Malteada 1");
+                        }
+                        case "Malteada 2" -> {
+                            System.out.println("Se enconttro Malteada 2");
+                        }
+                    }
+                }
             }
         }
 
@@ -38,6 +69,4 @@ public class Chef extends Agent {
         }
     }
 
-
-    
 }
