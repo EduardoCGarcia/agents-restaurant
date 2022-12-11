@@ -31,7 +31,7 @@ public class SousChef extends Agent {
             if (msj != null) {
                 switch (msj) {
                     case "Hamburgesa 1" -> {
-                        System.out.println("El mensaje es: "+msj);
+                        SousChefFrm.txtSolicitud.append(msj);
                     }
                     case "Hamburgesa 2" -> {
 
