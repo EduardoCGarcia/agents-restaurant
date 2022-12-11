@@ -24,29 +24,20 @@ public class Chef extends Agent {
      * nuevo comportamiento
      */
     private class PedirIngredientesBehaiviour extends Behaviour {
-
+        private boolean finished = false;
         public void action() {
             if (!ChefFrm.peticion.isEmpty()) {
+                finished = true;
                 ChefFrm.peticion += "\nPedido recibido";
                 ChefFrm.txtOrden.setText(ChefFrm.peticion);
             }
         }
 
         public boolean done() {
-            return true;
+            return finished;
         }
     }
 
-    //Este es el otro comportamiento
-    private class MiComportamiento2 extends Behaviour {
 
-        public void action() {
-            System.out.println("Soy el segundo comportamiento");
-        }
-
-        public boolean done() {
-            return true;
-        }
-    }
     
 }
