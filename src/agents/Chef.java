@@ -35,13 +35,12 @@ public class Chef extends Agent {
                 finished = true;
                 pedido = ChefFrm.peticion;
                 String[] prods = pedido.split("\n");
-                System.out.println("nuevo");
                 for (String prod : prods) {
                     switch (prod) {
                         case "Hamburgesa 1" -> {
                             ACLMessage mensaje = new ACLMessage(ACLMessage.INFORM);
-                            mensaje.addReceiver(new AID(("SousChef1"), AID.ISLOCALNAME));
-                            mensaje.setContent(prod);
+                            mensaje.addReceiver(new AID(("SousChef"), AID.ISLOCALNAME));
+                            mensaje.setContent("holahola");
                             send(mensaje);
                             System.out.println("Se enconttro Hamburgesa 1");
                         }

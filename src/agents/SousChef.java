@@ -18,13 +18,11 @@ public class SousChef extends Agent {
         //Aqui es donde se añade el comportamiento.
         SousChefFrm m = new SousChefFrm();
         m.setVisible(true);
-        System.out.println("Huevos");
     }
 
     private class PedirIngredientesBehaiviour extends Behaviour {
 
         private boolean finished = false;
-        private String pedido;
 
         public void action() {
             ACLMessage mensajeRecibido = blockingReceive();
