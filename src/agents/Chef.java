@@ -1,17 +1,18 @@
-package MiniChatMulPC;
+package agents;
 
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
+import views.ChefFrm;
 
 /**
  *
  * @author eduar
  */
-public class Agente extends Agent {
+public class Chef extends Agent {
     //Los comportamientos se ejecutan en el orden que se crearon
     protected void setup() {
         //Aqui es donde se añade el comportamiento.
-        Frm1 m = new Frm1();
+        ChefFrm m = new ChefFrm();
         m.setVisible(true);
     }
     

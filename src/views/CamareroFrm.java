@@ -152,4 +152,6 @@ public class CamareroFrm extends javax.swing.JFrame implements  Observer{
     public void update(Observable o, Object arg) {
         this.txtNota.append((String) arg);
     }
+    
+    
 }

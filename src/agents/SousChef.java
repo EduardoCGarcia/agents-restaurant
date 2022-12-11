@@ -1,8 +1,8 @@
 package agents;
 
-import MiniChatMulPC.*;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
+import views.SousChefFrm;
 
 /**
  *
@@ -12,8 +12,9 @@ public class SousChef extends Agent {
     //Los comportamientos se ejecutan en el orden que se crearon
     protected void setup() {
         //Aqui es donde se añade el comportamiento.
-        Frm1 m = new Frm1();
+        SousChefFrm m = new SousChefFrm();
         m.setVisible(true);
+        System.out.println("Huevos");
     }
     
     
