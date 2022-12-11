@@ -27,6 +27,7 @@ public class SousChef extends Agent {
         public void action() {
             ACLMessage mensajeRecibido = blockingReceive();
             if (mensajeRecibido != null) {
+                System.out.println("Mensaje recibido" + mensajeRecibido.getContent());
                 switch (mensajeRecibido.getContent()) {
                     case "Hamburgesa 1" -> {
                         System.out.println("Se enconttro Hamburgesa 1");
