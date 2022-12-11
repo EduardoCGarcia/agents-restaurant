@@ -1,10 +1,13 @@
 package agents;
 
+import Utilerias.FondoImagen;
 import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
 import jade.lang.acl.ACLMessage;
+import tools.GUITools;
 import views.ChefFrm;
+import views.Entrega;
 
 /**
  *
@@ -13,9 +16,10 @@ import views.ChefFrm;
 public class Chef extends Agent {
 
     //Los comportamientos se ejecutan en el orden que se crearon
+    ChefFrm m;
     protected void setup() {
         //Aqui es donde se añade el comportamiento.
-        ChefFrm m = new ChefFrm();
+        m = new ChefFrm();
         m.setVisible(true);
         addBehaviour(new PedirIngredientesBehaiviour());
     }
@@ -42,7 +46,7 @@ public class Chef extends Agent {
                             mensaje.addReceiver(new AID(("SousChef"), AID.ISLOCALNAME));
                             mensaje.setContent(prod);
                             send(mensaje);
-                            ACLMessage mensajeRespuesta =  blockingReceive();
+                            ACLMessage mensajeRespuesta = blockingReceive();
                             ChefFrm.txtOrden.append("\nSousChef Prepara los ingredientes para lo siguiente: \n" + prod);
                             ChefFrm.txtOrden.append("\nMushcas Gracias SousChef por darme los ingredientes: \n" + mensajeRespuesta.getContent());
                             String elementos[] = mensajeRespuesta.getContent().split(";");
@@ -50,7 +54,11 @@ public class Chef extends Agent {
                             for (String e : elementos) {
                                 ChefFrm.txtOrden.append("\nColocando: " + e);
                             }
+                            Entrega n = new Entrega(m, true);
+                            GUITools.panelIntoPanel(n.pnlImg, new FondoImagen("h1.jpeg"));
+                            n.setVisible(true);
                             ChefFrm.sendMessage(prod);
+
                         }
                         case "Hamburgesa 2" -> {
                             System.out.println("Se enconttro Hamburgesa 2");
