@@ -34,7 +34,7 @@ public class Chef extends Agent {
                 pedido = ChefFrm.peticion;
                 String[] prods = pedido.split("\n");
                 for (String prod : prods) {
-                    switch (pedido) {
+                    switch (prod) {
                         case "Hamburgesa 1" -> {
                             System.out.println("Se enconttro Hamburgesa 1");
                         }

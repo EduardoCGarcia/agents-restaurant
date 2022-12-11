@@ -1,7 +1,10 @@
 package agents;
 
+import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.Behaviour;
+import jade.lang.acl.ACLMessage;
+import views.ChefFrm;
 import views.SousChefFrm;
 
 /**
@@ -9,6 +12,7 @@ import views.SousChefFrm;
  * @author eduar
  */
 public class SousChef extends Agent {
+
     //Los comportamientos se ejecutan en el orden que se crearon
     protected void setup() {
         //Aqui es donde se añade el comportamiento.
@@ -16,37 +20,47 @@ public class SousChef extends Agent {
         m.setVisible(true);
         System.out.println("Huevos");
     }
-    
-    
-    /**
-     * Este es el comportamiento del agente Imprime dos mensajes uno con el
-     * nombre e indica que es el primer comporttamiento, ademas de que crea un
-     * nuevo comportamiento
-     */
-    private class MiComportamiento1 extends Behaviour {
+
+    private class PedirIngredientesBehaiviour extends Behaviour {
+
+        private boolean finished = false;
+        private String pedido;
 
         public void action() {
-            System.out.println("Mi nombre es: " + getName());
-            System.out.println("Soy el primer comportamiento");
+            ACLMessage mensajeRecibido = blockingReceive();
+            if (mensajeRecibido != null) {
+                switch (mensajeRecibido.getContent()) {
+                    case "Hamburgesa 1" -> {
+                        System.out.println("Se enconttro Hamburgesa 1");
+                    }
+                    case "Hamburgesa 2" -> {
+                        System.out.println("Se enconttro Hamburgesa 2");
+                    }
+                    case "Hamburgesa 3" -> {
+                        System.out.println("Se enconttro Hamburgesa 3");
+                    }
+                    case "Pizza 1" -> {
+                        System.out.println("Se enconttro Pizza 1");
+                    }
+                    case "Pizza 2" -> {
+                        System.out.println("Se enconttro Pizza 2");
+                    }
+                    case "Pizza 3" -> {
+                        System.out.println("Se enconttro Pizza 3");
+                    }
+                    case "Malteada 1" -> {
+                        System.out.println("Se enconttro Malteada 1");
+                    }
+                    case "Malteada 2" -> {
+                        System.out.println("Se enconttro Malteada 2");
+                    }
 
-            myAgent.addBehaviour(new MiComportamiento2());
+                }
+            }
         }
 
         public boolean done() {
-            return true;
+            return finished;
         }
     }
-
-    //Este es el otro comportamiento
-    private class MiComportamiento2 extends Behaviour {
-
-        public void action() {
-            System.out.println("Soy el segundo comportamiento");
-        }
-
-        public boolean done() {
-            return true;
-        }
-    }
-    
 }
