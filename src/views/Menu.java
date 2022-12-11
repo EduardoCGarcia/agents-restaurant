@@ -464,5 +464,13 @@ public class Menu extends javax.swing.JFrame {
         CamareroFrm.txtNota.setText(c);
     }
     
+    public static String mensajeProductos(){
+        String c = "";
+        for (Producto p : CamareroFrm.productos) {
+            c += String.format("%s\n", p.getNombre());
+        }
+        return c;
+    }
+    
     
 }

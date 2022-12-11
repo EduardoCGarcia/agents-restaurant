@@ -17,7 +17,7 @@ import models.Producto;
  *
  * @author eduar
  */
-public class CamareroFrm extends javax.swing.JFrame implements  Observer{
+public class CamareroFrm extends javax.swing.JFrame implements Observer {
 
     /**
      * Creates new form Camarero
@@ -25,6 +25,7 @@ public class CamareroFrm extends javax.swing.JFrame implements  Observer{
     private Menu m = new Menu();
     public static boolean s = false;
     public static ArrayList<Producto> productos = new ArrayList<Producto>();
+
     public CamareroFrm() {
         initComponents();
         m.setVisible(true);
@@ -102,8 +103,8 @@ public class CamareroFrm extends javax.swing.JFrame implements  Observer{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTerminarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTerminarPedidoActionPerformed
-        Cliente c =  new Cliente("192.168.100.4",5000, txtNota.getText());
-        Thread t =  new Thread(c);
+        Cliente c = new Cliente("192.168.100.4", 5000, Menu.mensajeProductos());
+        Thread t = new Thread(c);
         s = true;
         t.start();
     }//GEN-LAST:event_btnTerminarPedidoActionPerformed
@@ -154,6 +155,5 @@ public class CamareroFrm extends javax.swing.JFrame implements  Observer{
     public void update(Observable o, Object arg) {
         this.txtNota.append((String) arg);
     }
-    
-    
+
 }
