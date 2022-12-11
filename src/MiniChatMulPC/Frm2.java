@@ -20,7 +20,7 @@ public class Frm2 extends javax.swing.JFrame implements Observer{
     public Frm2() {
         initComponents();
         this.getRootPane().setDefaultButton(this.btnFrm2);
-        Server s = new Server(6000);
+        Server s = new Server(5000);
         s.addObserver(this);
         Thread t = new Thread(s);
         t.start();
@@ -89,7 +89,7 @@ public class Frm2 extends javax.swing.JFrame implements Observer{
         this.txtFrm2.append(mensaje);
         
         //ip de la otra maquina
-        Cliente c =  new Cliente("192.168.17.1",6000, mensaje);
+        Cliente c =  new Cliente("192.168.100.158",5000, mensaje);
         Thread t =  new Thread(c);
         t.start();
     }//GEN-LAST:event_btnFrm2ActionPerformed
