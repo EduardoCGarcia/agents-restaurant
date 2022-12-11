@@ -12,7 +12,7 @@ public class Chef extends Agent {
     //Los comportamientos se ejecutan en el orden que se crearon
     protected void setup() {
         //Aqui es donde se añade el comportamiento.
-        Frm1 m = new Frm1();
+        Frm2 m = new Frm2();
         m.setVisible(true);
     }
     
