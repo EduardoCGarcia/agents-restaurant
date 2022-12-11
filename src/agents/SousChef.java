@@ -27,32 +27,36 @@ public class SousChef extends Agent {
 
         public void action() {
             ACLMessage mensajeRecibido = blockingReceive();
-            if (mensajeRecibido != null) {
-                System.out.println("Mensaje recibido" + mensajeRecibido.getContent());
-                switch (mensajeRecibido.getContent()) {
+            String msj = mensajeRecibido.getContent();
+            System.out.println("Mensaje: " + msj);
+            if (msj != null) {
+                switch (msj) {
                     case "Hamburgesa 1" -> {
-                        System.out.println("Se enconttro Hamburgesa 1");
+                        ACLMessage mensaje = new ACLMessage(ACLMessage.INFORM);
+                        mensaje.addReceiver(new AID(("SousChef"), AID.ISLOCALNAME));
+                        mensaje.setContent("Pan|Lechuga|Kétchup|Mostaza|Carne|");
+                        send(mensaje);
                     }
                     case "Hamburgesa 2" -> {
-                        System.out.println("Se enconttro Hamburgesa 2");
+
                     }
                     case "Hamburgesa 3" -> {
-                        System.out.println("Se enconttro Hamburgesa 3");
+
                     }
                     case "Pizza 1" -> {
-                        System.out.println("Se enconttro Pizza 1");
+
                     }
                     case "Pizza 2" -> {
-                        System.out.println("Se enconttro Pizza 2");
+
                     }
                     case "Pizza 3" -> {
-                        System.out.println("Se enconttro Pizza 3");
+
                     }
                     case "Malteada 1" -> {
-                        System.out.println("Se enconttro Malteada 1");
+
                     }
                     case "Malteada 2" -> {
-                        System.out.println("Se enconttro Malteada 2");
+
                     }
 
                 }
