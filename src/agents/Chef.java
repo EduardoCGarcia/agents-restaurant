@@ -45,7 +45,12 @@ public class Chef extends Agent {
                             ACLMessage mensajeRespuesta =  blockingReceive();
                             ChefFrm.txtOrden.append("\nSousChef Prepara los ingredientes para lo siguiente: \n" + prod);
                             ChefFrm.txtOrden.append("\nMushcas Gracias SousChef por darme los ingredientes: \n" + mensajeRespuesta.getContent());
-                            
+                            String elementos[] = mensajeRespuesta.getContent().split("|");
+                            ChefFrm.txtOrden.append("\n-------------------------------------------------------------\n");
+                            for (String e : elementos) {
+                                ChefFrm.txtOrden.append("\nColocando: " + e);
+                            }
+                            ChefFrm.txtOrden.append("Terminada");
                         }
                         case "Hamburgesa 2" -> {
                             System.out.println("Se enconttro Hamburgesa 2");

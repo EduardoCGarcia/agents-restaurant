@@ -32,9 +32,9 @@ public class SousChef extends Agent {
             if (msj != null) {
                 switch (msj) {
                     case "Hamburgesa 1" -> {
-                        SousChefFrm.txtSolicitud.append(msj);
+                        SousChefFrm.txtSolicitud.append(msj+"\n");
                         respuesta = mensajeRecibido.createReply();
-                        respuesta.setContent("Pan|Carne");
+                        respuesta.setContent("Pan|Carne|");
                         send(respuesta);
                     }
                     case "Hamburgesa 2" -> {
