@@ -8,21 +8,21 @@ package views;
 import MiniChatMulPC.Server;
 import Utilerias.FondoImagen;
 import java.util.Observable;
+import java.util.Observer;
 
 /**
  *
  * @author eduar
  */
-public class ChefFrm extends javax.swing.JFrame {
+public class ChefFrm extends javax.swing.JFrame implements  Observer{
 
     /**
      * Creates new form ChefFrm
      */
     public ChefFrm() {
         initComponents();
-        //this.getRootPane().setDefaultButton(this.btnTerminarPedido);
         Server s = new Server(5000);
-        //s.addObserver(this);
+        s.addObserver(this);
         Thread t = new Thread(s);
         t.start();
     }
@@ -121,7 +121,7 @@ public class ChefFrm extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txtOrden;
     // End of variables declaration//GEN-END:variables
-    /*public void update(Observable o, Object arg) {
+    public void update(Observable o, Object arg) {
         this.txtOrden.append((String) arg);
-    }*/
+    }
 }
