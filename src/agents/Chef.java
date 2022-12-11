@@ -43,8 +43,8 @@ public class Chef extends Agent {
                             mensaje.setContent(prod);
                             send(mensaje);
                             ACLMessage mensajeRespuesta =  blockingReceive();
-                            ChefFrm.txtOrden.append("SousChef Prepara los ingredientes para lo siguiente: " + prod);
-                            ChefFrm.txtOrden.append("Mushcas Gracias SousChef por darme los ingredientes: " + mensajeRespuesta.getContent());
+                            ChefFrm.txtOrden.append("\nSousChef Prepara los ingredientes para lo siguiente: \n" + prod);
+                            ChefFrm.txtOrden.append("\nMushcas Gracias SousChef por darme los ingredientes: \n" + mensajeRespuesta.getContent());
                             
                         }
                         case "Hamburgesa 2" -> {
