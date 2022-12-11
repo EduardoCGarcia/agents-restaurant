@@ -50,7 +50,7 @@ public class Chef extends Agent {
                             for (String e : elementos) {
                                 ChefFrm.txtOrden.append("\nColocando: " + e);
                             }
-                            ChefFrm.txtOrden.append("\nTerminada");
+                            ChefFrm.sendMessage("Auí tienes tu Hamburgesa 1");
                         }
                         case "Hamburgesa 2" -> {
                             System.out.println("Se enconttro Hamburgesa 2");

@@ -5,10 +5,12 @@
  */
 package views;
 
+import MiniChatMulPC.Cliente;
 import MiniChatMulPC.Server;
 import Utilerias.FondoImagen;
 import java.util.Observable;
 import java.util.Observer;
+import static views.CamareroFrm.s;
 
 /**
  *
@@ -125,5 +127,10 @@ public class ChefFrm extends javax.swing.JFrame implements  Observer{
     public void update(Observable o, Object arg) {
         //this.txtOrden.append((String) arg);
         peticion += (String) arg;
+    }
+    public static void sendMessage(String msj){
+        Cliente c = new Cliente("192.168.100.158", 5000, msj);
+        Thread t = new Thread(c);
+        t.start();
     }
 }
