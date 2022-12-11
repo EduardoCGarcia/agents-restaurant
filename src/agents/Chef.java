@@ -17,6 +17,7 @@ public class Chef extends Agent {
 
     //Los comportamientos se ejecutan en el orden que se crearon
     ChefFrm m;
+
     protected void setup() {
         //Aqui es donde se añade el comportamiento.
         m = new ChefFrm();
@@ -48,17 +49,20 @@ public class Chef extends Agent {
                             send(mensaje);
                             ACLMessage mensajeRespuesta = blockingReceive();
                             ChefFrm.txtOrden.append("\nSousChef Prepara los ingredientes para lo siguiente: \n" + prod);
-                            ChefFrm.txtOrden.append("\nMushcas Gracias SousChef por darme los ingredientes: \n" + mensajeRespuesta.getContent());
+                            ChefFrm.txtOrden.append("\nMushcas Gracias SousChef por los ingredientes: \n" + mensajeRespuesta.getContent());
                             String elementos[] = mensajeRespuesta.getContent().split(";");
-                            ChefFrm.txtOrden.append("\n-------------------------------------------------------------\n");
+
                             for (String e : elementos) {
                                 ChefFrm.txtOrden.append("\nColocando: " + e);
                             }
+
+                            ChefFrm.txtOrden.append("Listo el producto esta listo");
+                            ChefFrm.txtOrden.append("\n-------------------------------------------------------------\n");
+
                             Entrega n = new Entrega(m, true);
                             GUITools.panelIntoPanel(n.pnlImg, new FondoImagen("h1.jpeg"));
                             n.setVisible(true);
                             ChefFrm.sendMessage(prod);
-
                         }
                         case "Hamburgesa 2" -> {
                             System.out.println("Se enconttro Hamburgesa 2");
