@@ -19,6 +19,7 @@ public class ChefFrm extends javax.swing.JFrame implements  Observer{
     /**
      * Creates new form ChefFrm
      */
+    public static String peticion = "";
     public ChefFrm() {
         initComponents();
         Server s = new Server(5000);
@@ -119,9 +120,10 @@ public class ChefFrm extends javax.swing.JFrame implements  Observer{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea txtOrden;
+    public static javax.swing.JTextArea txtOrden;
     // End of variables declaration//GEN-END:variables
     public void update(Observable o, Object arg) {
-        this.txtOrden.append((String) arg);
+        //this.txtOrden.append((String) arg);
+        peticion += (String) arg;
     }
 }

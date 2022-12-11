@@ -39,14 +39,14 @@ public class Camarero extends Agent {
         
         CamareroFrm m = new CamareroFrm();
         m.setVisible(true);
-        addBehaviour(new PedirPlantasMensajeBehaviour(this));
+        addBehaviour(new PedirProductosMensajeBehaviour(this));
     }
     
-    class PedirPlantasMensajeBehaviour extends SimpleBehaviour {
+    class PedirProductosMensajeBehaviour extends SimpleBehaviour {
 
         private boolean finished = false;
 
-        public PedirPlantasMensajeBehaviour(Agent a) {
+        public PedirProductosMensajeBehaviour(Agent a) {
             super(a);
         }
 

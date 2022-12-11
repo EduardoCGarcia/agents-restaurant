@@ -14,6 +14,7 @@ public class Chef extends Agent {
         //Aqui es donde se añade el comportamiento.
         ChefFrm m = new ChefFrm();
         m.setVisible(true);
+        addBehaviour(new PedirIngredientesBehaiviour());
     }
     
     
@@ -22,13 +23,13 @@ public class Chef extends Agent {
      * nombre e indica que es el primer comporttamiento, ademas de que crea un
      * nuevo comportamiento
      */
-    private class MiComportamiento1 extends Behaviour {
+    private class PedirIngredientesBehaiviour extends Behaviour {
 
         public void action() {
-            System.out.println("Mi nombre es: " + getName());
-            System.out.println("Soy el primer comportamiento");
-
-            myAgent.addBehaviour(new MiComportamiento2());
+            if (!ChefFrm.peticion.isEmpty()) {
+                ChefFrm.peticion += "\nPedido recibido";
+                ChefFrm.txtOrden.setText(ChefFrm.peticion);
+            }
         }
 
         public boolean done() {
