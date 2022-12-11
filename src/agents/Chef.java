@@ -72,6 +72,8 @@ public class Chef extends Agent {
                         }
                     }
                 }
+            }else{
+                ChefFrm.txtOrden.append("\n"+msj);
             }
         }
 

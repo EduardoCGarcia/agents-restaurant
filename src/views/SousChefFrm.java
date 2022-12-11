@@ -31,7 +31,7 @@ public class SousChefFrm extends javax.swing.JFrame {
 
         jPanel1 = new FondoImagen("souschef.jpg");
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtSolicitud = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,9 +48,9 @@ public class SousChefFrm extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtSolicitud.setColumns(20);
+        txtSolicitud.setRows(5);
+        jScrollPane1.setViewportView(txtSolicitud);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,6 +113,6 @@ public class SousChefFrm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    public static javax.swing.JTextArea txtSolicitud;
     // End of variables declaration//GEN-END:variables
 }

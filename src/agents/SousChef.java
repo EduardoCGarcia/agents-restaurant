@@ -28,12 +28,12 @@ public class SousChef extends Agent {
         public void action() {
             ACLMessage mensajeRecibido = blockingReceive();
             String msj = mensajeRecibido.getContent();
-            System.out.println("Mensaje: " + msj);
+            SousChefFrm.txtSolicitud.append("\n"+msj);
             if (msj != null) {
                 switch (msj) {
                     case "Hamburgesa 1" -> {
                         ACLMessage mensaje = new ACLMessage(ACLMessage.INFORM);
-                        mensaje.addReceiver(new AID(("SousChef"), AID.ISLOCALNAME));
+                        mensaje.addReceiver(new AID(("Chef"), AID.ISLOCALNAME));
                         mensaje.setContent("Pan|Lechuga|Kétchup|Mostaza|Carne|");
                         send(mensaje);
                     }
