@@ -8,10 +8,13 @@ package views;
 import MiniChatMulPC.Cliente;
 import MiniChatMulPC.Server;
 import Utilerias.FondoImagen;
+import jade.core.AID;
+import jade.lang.acl.ACLMessage;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 import models.Producto;
+import tools.GUITools;
 
 /**
  *
@@ -153,7 +156,38 @@ public class CamareroFrm extends javax.swing.JFrame implements Observer {
     // End of variables declaration//GEN-END:variables
     @Override
     public void update(Observable o, Object arg) {
+        this.txtNota.append("\n-----------------------\n");
+        this.txtNota.append("Tu orden esta lista\nSe te hace entrega\nde lo siguiente: \n");
         this.txtNota.append((String) arg);
+
+        switch ((String) arg) {
+            case "Hamburgesa 1" -> {
+                Entrega n = new Entrega(this, true);
+                GUITools.panelIntoPanel(n.pnlImg, new FondoImagen("h1.jpeg"));
+                n.setVisible(true);
+            }
+            case "Hamburgesa 2" -> {
+                System.out.println("Se enconttro Hamburgesa 2");
+            }
+            case "Hamburgesa 3" -> {
+                System.out.println("Se enconttro Hamburgesa 3");
+            }
+            case "Pizza 1" -> {
+                System.out.println("Se enconttro Pizza 1");
+            }
+            case "Pizza 2" -> {
+                System.out.println("Se enconttro Pizza 2");
+            }
+            case "Pizza 3" -> {
+                System.out.println("Se enconttro Pizza 3");
+            }
+            case "Malteada 1" -> {
+                System.out.println("Se enconttro Malteada 1");
+            }
+            case "Malteada 2" -> {
+                System.out.println("Se enconttro Malteada 2");
+            }
+        }
     }
 
 }
