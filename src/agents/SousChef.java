@@ -27,21 +27,16 @@ public class SousChef extends Agent {
 
         public void action() {
             ACLMessage mensajeRecibido = blockingReceive();
-            ACLMessage respuesta;
+            ACLMessage respuesta = null;
             String msj = mensajeRecibido.getContent();
             if (msj != null) {
                 switch (msj) {
                     case "Hamburgesa 1" -> {
-                        SousChefFrm.txtSolicitud.append("Preparando ingredientes \npara: ");
-                        SousChefFrm.txtSolicitud.append(msj+"\n");
-                        SousChefFrm.txtSolicitud.append("Ingredientes:\n");
                         String ingredientes = "Pan;Carne;Lechuga;Jitomate;Ketchup;Aros de Cebolla";
-                        SousChefFrm.txtSolicitud.append("Ingredientes:\n");
-                        SousChefFrm.txtSolicitud.append(ingredientes + "\n");
-                        SousChefFrm.txtSolicitud.append("\n----------------------------------------\n");
-                        respuesta = mensajeRecibido.createReply();
-                        respuesta.setContent(ingredientes);
-                        send(respuesta);
+                        accionProd("Pan;Carne;Lechuga;Jitomate;Ketchup;Aros de Cebolla",
+                                msj,
+                                mensajeRecibido,
+                                respuesta);
                     }
                     case "Hamburgesa 2" -> {
 
@@ -71,6 +66,18 @@ public class SousChef extends Agent {
 
         public boolean done() {
             return finished;
+        }
+
+        public void accionProd(String ingredientes, String msj, ACLMessage mensajeRecibido, ACLMessage respuesta) {
+            SousChefFrm.txtSolicitud.append("Preparando ingredientes \npara: ");
+            SousChefFrm.txtSolicitud.append(msj + "\n");
+            SousChefFrm.txtSolicitud.append("Ingredientes:\n");
+            SousChefFrm.txtSolicitud.append("Ingredientes:\n");
+            SousChefFrm.txtSolicitud.append(ingredientes + "\n");
+            SousChefFrm.txtSolicitud.append("\n----------------------------------------\n");
+            respuesta = mensajeRecibido.createReply();
+            respuesta.setContent(ingredientes);
+            send(respuesta);
         }
     }
 }

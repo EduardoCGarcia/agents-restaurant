@@ -43,26 +43,7 @@ public class Chef extends Agent {
                 for (String prod : prods) {
                     switch (prod) {
                         case "Hamburgesa 1" -> {
-                            ACLMessage mensaje = new ACLMessage(ACLMessage.INFORM);
-                            mensaje.addReceiver(new AID(("SousChef"), AID.ISLOCALNAME));
-                            mensaje.setContent(prod);
-                            send(mensaje);
-                            ACLMessage mensajeRespuesta = blockingReceive();
-                            ChefFrm.txtOrden.append("\nSousChef Prepara los ingredientes para lo siguiente: \n" + prod);
-                            ChefFrm.txtOrden.append("\nMushcas Gracias SousChef por los ingredientes: \n" + mensajeRespuesta.getContent());
-                            String elementos[] = mensajeRespuesta.getContent().split(";");
-
-                            for (String e : elementos) {
-                                ChefFrm.txtOrden.append("\nColocando: " + e);
-                            }
-
-                            ChefFrm.txtOrden.append("Listo el producto esta listo");
-                            ChefFrm.txtOrden.append("\n-------------------------------------------------------------\n");
-
-                            Entrega n = new Entrega(m, true);
-                            GUITools.panelIntoPanel(n.pnlImg, new FondoImagen("h1.jpeg"));
-                            n.setVisible(true);
-                            ChefFrm.sendMessage(prod);
+                            actionProd(prod,"h1.jpeg");
                         }
                         case "Hamburgesa 2" -> {
                             System.out.println("Se enconttro Hamburgesa 2");
@@ -92,6 +73,29 @@ public class Chef extends Agent {
 
         public boolean done() {
             return finished;
+        }
+
+        public void actionProd(String prod, String img) {
+            ACLMessage mensaje = new ACLMessage(ACLMessage.INFORM);
+            mensaje.addReceiver(new AID(("SousChef"), AID.ISLOCALNAME));
+            mensaje.setContent(prod);
+            send(mensaje);
+            ACLMessage mensajeRespuesta = blockingReceive();
+            ChefFrm.txtOrden.append("\nSousChef Prepara los ingredientes para lo siguiente: \n" + prod);
+            ChefFrm.txtOrden.append("\nMushcas Gracias SousChef por los ingredientes: \n" + mensajeRespuesta.getContent());
+            String elementos[] = mensajeRespuesta.getContent().split(";");
+
+            for (String e : elementos) {
+                ChefFrm.txtOrden.append("\nColocando: " + e);
+            }
+
+            ChefFrm.txtOrden.append("Listo el producto esta listo");
+            ChefFrm.txtOrden.append("\n-------------------------------------------------------------\n");
+
+            Entrega n = new Entrega(m, true);
+            GUITools.panelIntoPanel(n.pnlImg, new FondoImagen("h1.jpeg"));
+            n.setVisible(true);
+            ChefFrm.sendMessage(prod);
         }
     }
 
