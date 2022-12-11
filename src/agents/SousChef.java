@@ -18,6 +18,7 @@ public class SousChef extends Agent {
         //Aqui es donde se añade el comportamiento.
         SousChefFrm m = new SousChefFrm();
         m.setVisible(true);
+        addBehaviour(new PedirIngredientesBehaiviour());
     }
 
     private class PedirIngredientesBehaiviour extends Behaviour {
